@@ -23,15 +23,15 @@ namespace GuitarShop.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Category>().HasData(
-                new Category { CategoryId=1, Name = "General" },
-                new Category { CategoryId=2, Name = "History" }
-            );
-            modelBuilder.Entity<Topic>().HasData(
-                new Topic { TopicId = 1, Name = "C#" },
-                new Topic { TopicId = 2, Name = "JavaScript" },
-                new Topic { TopicId =3, Name = "Bootstrap" }
-            ); ;
+            Category general = new Category { CategoryId = 1, Name = "General" };
+            Category history = new Category { CategoryId = 2, Name = "History" };
+
+            Topic cSharp = new Topic { TopicId = 1, Name = "C#" };
+            Topic javaScript = new Topic { TopicId = 2, Name = "JavaScript" };
+            Topic bootStrap = new Topic { TopicId = 3, Name = "Bootstrap" };
+
+            modelBuilder.Entity<Category>().HasData(general, history);
+            modelBuilder.Entity<Topic>().HasData(cSharp, javaScript,bootStrap); ;
             modelBuilder.Entity<Question>().HasData(
                 new Question
                 {

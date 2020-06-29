@@ -11,8 +11,8 @@ namespace GuitarShop.Models
         public string QuestionText { get; set; }
         public string AnswerText { get; set; }
         public int TopicId { get; set; }
-        public Topic Topics { get; set; }
+        public Topic Topic { get; set; }
         public int CategoryId { get; set; }
-        public Category Categories { get; set; }
+        public Category Category { get; set; }
     }
 }
