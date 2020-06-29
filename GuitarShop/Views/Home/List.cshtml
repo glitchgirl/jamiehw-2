@@ -1,5 +1,5 @@
-﻿@page
-@model GuitarShop.Models.QuestionsViewModel
+﻿@using GuitarShop.Models 
+@model QuestionsViewModel
 @{
     ViewBag.Title = "My FAQs";
 }
@@ -44,11 +44,11 @@
         <div class="column2">
             <table>
                 <tbody>
-                    @for (int i = 0; i < Model.questions.Count(); ++i)
+                    @foreach (Question q in Model.questions)
                     {
                         <tr>
-                            <td><strong>@Model.questions[i].QuestionText</strong>  @Model.questions[i].AnswerText</td>
-                            <td>Topic: @Model.questions[i].Topics.Name         Category: @Model.questions[i].Categories.Name</td>
+                            <td><strong>@q.QuestionText</strong>  @q.AnswerText</td>
+                            <td>Topic: @q.Topics         Category: @q.Categories</td>
                         </tr>
                     }
                 </tbody>

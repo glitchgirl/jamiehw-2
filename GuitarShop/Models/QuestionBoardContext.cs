@@ -23,15 +23,16 @@ namespace GuitarShop.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Category>().HasData(
-                new Category { CategoryId=1, Name = "General" },
-                new Category { CategoryId=2, Name = "History" }
-            );
-            modelBuilder.Entity<Topic>().HasData(
-                new Topic { TopicId = 1, Name = "C#" },
-                new Topic { TopicId = 2, Name = "JavaScript" },
-                new Topic { TopicId = 3, Name = "Bootstrap" }
-            ); ;
+            Category general = new Category { CategoryId = 1, Name = "General" };
+            Category history = new Category { CategoryId = 2, Name = "History" };
+
+            Topic cSharp = new Topic { TopicId = 1, Name = "C#" };
+            Topic javaScript = new Topic { TopicId = 2, Name = "JavaScript" };
+            Topic bootStrap = new Topic { TopicId = 3, Name = "Bootstrap" };
+
+            modelBuilder.Entity<Category>().HasData(general, history);
+            modelBuilder.Entity<Topic>().HasData(cSharp, javaScript, bootStrap); ;
+
             modelBuilder.Entity<Question>().HasData(
                 new Question
                 {
@@ -40,46 +41,6 @@ namespace GuitarShop.Models
                     QuestionText = "What is C#?",
                     TopicId = 1,
                     CategoryId =1
-                },
-                new Question
-                {
-                    Id = 2,
-                    AnswerText = "In 2002.",
-                    QuestionText = "When was C# first released?",
-                    TopicId = 1,
-                    CategoryId =1
-                },
-                new Question
-                {
-                    Id = 3,
-                    AnswerText = "A general purpose scripting language that executes in a web browser.",
-                    QuestionText = "What is JavaScript?",
-                    TopicId = 2,
-                    CategoryId =1
-                },
-                new Question
-                {
-                    Id = 4,
-                    AnswerText = "In 1995.",
-                    QuestionText = "When was JavaScript first released?",
-                    TopicId = 2,
-                    CategoryId = 2
-                },
-                new Question
-                {
-                    Id = 5,
-                    AnswerText = "A CSS framework for creating responsive web apps for multiple screen sizes.",
-                    QuestionText = "What is Bootstrap?",
-                    TopicId = 3,
-                    CategoryId = 1
-                },
-                new Question
-                {
-                    Id = 6,
-                    AnswerText = "In 2011.",
-                    QuestionText = "When was Bootstrap first released?",
-                    TopicId = 3,
-                    CategoryId =2
                 }
             );
         }

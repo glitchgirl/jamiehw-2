@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GuitarShop.Migrations
 {
     [DbContext(typeof(QuestionBoardContext))]
-    [Migration("20200629142600_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200629175649_InitalCreate")]
+    partial class InitalCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -68,7 +68,8 @@ namespace GuitarShop.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("CategoryId")
+                        .IsUnique();
 
                     b.HasIndex("TopicId");
 
@@ -160,8 +161,8 @@ namespace GuitarShop.Migrations
             modelBuilder.Entity("GuitarShop.Models.Question", b =>
                 {
                     b.HasOne("GuitarShop.Models.Category", "Categories")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
+                        .WithOne("question")
+                        .HasForeignKey("GuitarShop.Models.Question", "CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

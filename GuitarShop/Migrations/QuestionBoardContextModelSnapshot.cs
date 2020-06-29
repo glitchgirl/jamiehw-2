@@ -66,7 +66,8 @@ namespace GuitarShop.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("CategoryId")
+                        .IsUnique();
 
                     b.HasIndex("TopicId");
 
@@ -158,8 +159,8 @@ namespace GuitarShop.Migrations
             modelBuilder.Entity("GuitarShop.Models.Question", b =>
                 {
                     b.HasOne("GuitarShop.Models.Category", "Categories")
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
+                        .WithOne("question")
+                        .HasForeignKey("GuitarShop.Models.Question", "CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
