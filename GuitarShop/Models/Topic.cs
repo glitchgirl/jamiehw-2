@@ -12,5 +12,6 @@ namespace GuitarShop.Models
         [Key]
         public int TopicId { get; set; }
         public string Name { get; set; }
+        public ICollection<Question> questions { get; set; }
     }
 }

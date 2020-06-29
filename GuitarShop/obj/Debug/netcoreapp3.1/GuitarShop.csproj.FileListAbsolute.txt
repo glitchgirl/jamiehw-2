@@ -281,3 +281,5 @@ C:\Users\Chand\Desktop\Master_Folder\git_repositories\Jamie_hw_help_v1\GuitarSho
 C:\Users\Chand\Desktop\Master_Folder\git_repositories\Jamie_hw_help_v1\GuitarShop\obj\Debug\netcoreapp3.1\GuitarShop.pdb
 C:\Users\Chand\Desktop\Master_Folder\git_repositories\Jamie_hw_help_v1\GuitarShop\obj\Debug\netcoreapp3.1\GuitarShop.genruntimeconfig.cache
 C:\Users\Chand\Desktop\Master_Folder\git_repositories\Jamie_hw_help_v1\GuitarShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\List.cshtml.g.cs
+C:\Users\Chand\Desktop\Master_Folder\git_repositories\Jamie_hw_help_v1\GuitarShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Chand\Desktop\Master_Folder\git_repositories\Jamie_hw_help_v1\GuitarShop\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs

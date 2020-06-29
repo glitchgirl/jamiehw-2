@@ -2,7 +2,7 @@
 
 namespace GuitarShop.Migrations
 {
-    public partial class InitalCreate : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -82,18 +82,20 @@ namespace GuitarShop.Migrations
             migrationBuilder.InsertData(
                 table: "Questions",
                 columns: new[] { "Id", "AnswerText", "CategoryId", "QuestionText", "TopicId" },
-                values: new object[] { 6, "In 2011.", 2, "When was Bootstrap first released?", 3 });
-
-            migrationBuilder.InsertData(
-                table: "Questions",
-                columns: new[] { "Id", "AnswerText", "CategoryId", "QuestionText", "TopicId" },
-                values: new object[] { 5, "A CSS framework for creating responsive web apps for multiple screen sizes.", 1, "What is Bootstrap?", 3 });
+                values: new object[,]
+                {
+                    { 1, "A general purpose object oriented language that uses a concise, Java-like syntax", 1, "What is C#?", 1 },
+                    { 2, "In 2002.", 1, "When was C# first released?", 1 },
+                    { 3, "A general purpose scripting language that executes in a web browser.", 1, "What is JavaScript?", 2 },
+                    { 4, "In 1995.", 2, "When was JavaScript first released?", 2 },
+                    { 5, "A CSS framework for creating responsive web apps for multiple screen sizes.", 1, "What is Bootstrap?", 3 },
+                    { 6, "In 2011.", 2, "When was Bootstrap first released?", 3 }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Questions_CategoryId",
                 table: "Questions",
-                column: "CategoryId",
-                unique: true);
+                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Questions_TopicId",
