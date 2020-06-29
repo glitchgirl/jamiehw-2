@@ -22,15 +22,16 @@ namespace GuitarShop.Controllers
 
         public IActionResult Index()
         {
-            return RedirectToAction("List", "Home");
+            return RedirectToAction("List");
         }
         //list route controller/id/id2
         [Route("[Controller]s/{id?}/{id2?}")]
         public IActionResult List(string id = "All", string id2 = "All")
         {
             List<Question> fAQs = context.Questions.OrderBy(f => f.Id).ToList();
- 
-            return View(fAQs);
+            QuestionsViewModel model = new QuestionsViewModel();
+            model.questions = fAQs;
+            return View(model);
         }
     }
 }
