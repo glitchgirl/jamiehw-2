@@ -30,7 +30,7 @@ namespace GuitarShop.Models
             modelBuilder.Entity<Topic>().HasData(
                 new Topic { TopicId = 1, Name = "C#" },
                 new Topic { TopicId = 2, Name = "JavaScript" },
-                new Topic { TopicId =3, Name = "Bootstrap" }
+                new Topic { TopicId = 3, Name = "Bootstrap" }
             ); ;
             modelBuilder.Entity<Question>().HasData(
                 new Question

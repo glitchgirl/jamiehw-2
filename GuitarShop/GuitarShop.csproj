@@ -6,6 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Product\**" />
+    <Compile Remove="Views\Shared\**" />
+    <Content Remove="Views\Product\**" />
+    <Content Remove="Views\Shared\**" />
+    <EmbeddedResource Remove="Views\Product\**" />
+    <EmbeddedResource Remove="Views\Shared\**" />
+    <None Remove="Views\Product\**" />
+    <None Remove="Views\Shared\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Migrations\20200628233505_Inital-Create.cs" />
     <Compile Remove="Migrations\20200628233505_Inital-Create.Designer.cs" />
   </ItemGroup>
@@ -23,9 +34,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\" />
-    <Folder Include="Views\Home\" />
-    <Folder Include="Views\Product\" />
-    <Folder Include="Views\Shared\" />
   </ItemGroup>
 
 </Project>

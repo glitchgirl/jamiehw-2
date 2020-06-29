@@ -10,7 +10,6 @@ namespace GuitarShop.Models
     public class Topic
     {
         [Key]
-        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int TopicId { get; set; }
         public string Name { get; set; }
     }

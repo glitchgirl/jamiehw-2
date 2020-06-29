@@ -10,7 +10,6 @@ namespace GuitarShop.Models
     public class Category
     {
         [Key]
-        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CategoryId { get; set; }
         public string Name { get; set; }
     }

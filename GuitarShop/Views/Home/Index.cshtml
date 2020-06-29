@@ -1,0 +1,58 @@
+﻿@page
+@model GuitarShop.Models.QuestionsViewModel
+@{
+    ViewBag.Title = "My FAQs";
+}
+<header>
+</header>
+<div class="text-center">
+    <div class="row">
+        <div class="column1">
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="List" asp-route-id="All" asp-route-id2="All">All FAQs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="List" asp-route-id="boot">BootStrap</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="List" asp-route-id="cs">C#</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="List" asp-route-id="js">javascript</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a asp-controller="Home" asp-action="List" asp-route-id2="Gen">General</a>
+                        </td>
+                        <td>
+                            <a asp-controller="Home" asp-action="List" asp-route-id2="hist">History</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="column2">
+            <table>
+                <tbody>
+                    @for (int i = 0; i < Model.questions.Count(); ++i)
+                    {
+                        <tr>
+                            <td><strong>@Model.questions[i].QuestionText</strong>  @Model.questions[i].AnswerText</td>
+                            <td>Topic: @Model.questions[i].Topics.Name         Category: @Model.questions[i].Categories.Name</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
